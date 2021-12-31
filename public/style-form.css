@@ -1,0 +1,141 @@
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-image: url(../public/assets/bg.jpg);
+    background-size: cover;
+}
+
+/*----- Navbar -----*/
+nav{
+    height: 7vh;
+}
+ul{
+    list-style-type:none;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(150, 84, 84);
+    box-sizing: border-box;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    color: blanchedalmond;
+}
+li a:hover:not(.not_logo){
+    background-color: rgb(138, 78, 78);
+}
+
+li a.logout{
+    border: 1px solid white;
+    background-color: rgb(128, 63, 63);
+    border-radius: 5px;
+    padding : 5px;
+    margin : 7px 10px;
+  }
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem
+}
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+
+/*----- Content ------*/
+.container {
+    box-shadow: 0 4px 8px 0 rgba(70, 39, 39, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 350px;
+    margin:30px auto;
+    padding: 20px;
+    border-radius: 5px;
+}
+label {
+    margin-top:10px;
+    font-weight: bold;
+}
+.input_item input{
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: rgb(218, 216, 216);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px; 
+}
+.input_item select{
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid black;
+    box-sizing: border-box;
+    background-color: rgb(218, 216, 216);
+    width: 100%;
+    height: 30px;
+    border-radius: 5px; 
+}
+.input_item textarea{
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 100%;
+    border: 2px solid black;
+    background-color: rgb(218, 216, 216);
+    box-sizing: border-box;
+}
+div .input_item input:focus{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background-color: rgb(190, 189, 189);
+    border: 3px solid black;
+}
+input:hover{
+    border: 3px solid blue;
+}
+.input_radio .button{
+    display: flex;
+}
+.input_radio .button label{
+    flex: 2;
+}
+.input_radio label{
+    margin-top: 2px;
+}
+select{
+    height: 30px;
+}
+div button{
+    border-radius: 5px;
+    border: 2px solid black;
+    margin: auto;
+    width: 75px;
+    height: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+button:hover{
+    border-radius: 5px;
+    border: 3px solid black;
+    color: blue;
+    background-color:rgb(190, 189, 189);
+}

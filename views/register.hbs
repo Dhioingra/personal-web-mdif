@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../public/style-form.css">
+</head>
+<body>
+
+  <nav>
+    <ul>
+        <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+        <li><a href="/" style="margin-left:20px;">Home</a></li>
+        <li><a href="/blog-detail">Blog</a></li>
+        {{#if isLogin}}
+      <li style="float:right;"><a class="logout" href="/logout">LogOut</a></li>
+      <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+      {{else}}
+      <li style="float:right;"><a class="logout" href="/login">Login</a></li>
+      <li style="float:right;"><a class="logout" href="/register">Register</a></li>
+      {{/if}}
+    </ul>
+</nav>
+{{#if messages.danger}}
+<div class="alert alert-danger" role="alert">
+  {{messages.danger}}
+</div>
+{{/if}}
+
+      <div class="container">
+      <form action="/register" method="POST" >
+        <div>
+          <h3 style="text-align: center;">REGISTER</h3>
+        </div>
+        <div class="input_item">
+                <label for="">Email</label>
+                <br>
+                <input name="email" type="email" id="email">
+        </div>
+      <br>
+        <div class="input_item">
+                <label for="name">Name</label>
+                <br>
+                <input name="name" type="text" id="name">
+        </div>
+        <br>
+         <div class="input_item">
+                <label for="password">Password</label>
+                <br>
+                <input name="password" type="password" id="password">
+            </div>
+        <br>
+        <div>
+          <button type="submit"> <img src="../public/assets/submit.png" style="width:10px;"> Submit</button>
+        </div>
+      </form>
+    </div>
+    
+</body>
+</html>

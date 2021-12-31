@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>Creating Blog Page</title>
+    <link rel="stylesheet" href="../public/style-blog.css" />
+</head>
+<body>
+
+<!--- NavBar --->
+
+<nav>
+  <ul>
+      <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+      <li><a href="/" style="margin-left:20px;">Home</a></li>
+      <li><a href="/blog-detail">Blog</a></li>
+      <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+  </ul>
+</nav>  
+
+<!--- Blog Form --->
+    
+    <div class="blog">
+      <div class="blog-form">
+        <div class="form-container">
+          
+          <form action='/edit-blog/{{id}}' method="POST" enctype="multipart/form-data">
+            <h1>Create Post Blog</h1>
+            <div>
+              <label for="input-blog-title">Author</label>
+              <input name="author" id="input-blog-author"/>
+            </div>
+            <div>
+              <label for="input-blog-title">Title</label>
+              <input name="title" id="input-blog-title" />
+            </div>
+            <div>
+              <label for="input-blog-content">Content</label>
+              <textarea name="content" id="input-blog-content"></textarea>
+            </div>
+            <div>
+              <label>Upload Image</label>
+              <div class="input-blog-image-group">
+                <label for="input-blog-image">
+                  <p>Attach File</p>
+                  <img src="../public/assets/file.png" alt="file" />
+                </label>
+                <input name="image" type="file" id="input-blog-image" hidden />
+              </div>
+            </div>
+            <div class="button-group">
+              <button type="submit">Post Blog</button>
+            </div>
+          </form>
+          
+        </div>
+      </div>
+      <hr class="line" />
+      <div id="contents" class="blog-list">
+        
+        <!-- Dynamic content would be here -->
+
+      </div>
+    </div>
+    
+
+    <script src="blog.js"></script>
+</body>
+</html>

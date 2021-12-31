@@ -1,0 +1,118 @@
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin:0;
+    background-image: url(./assets/bg.jpg);
+    background-size: cover;
+}
+/* ------ Navbar ------ */
+nav{
+    height: 7vh; 
+}
+ul{
+    list-style-type:none;
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(150, 84, 84);
+    box-sizing: border-box;
+}
+li{
+    float: left;
+}
+li a{
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    color: blanchedalmond;
+}
+li a:hover:not(.not_logo){
+    background-color: rgb(138, 78, 78);
+}
+li a.logout{
+    border: 1px solid white;
+    background-color: rgb(128, 63, 63);
+    border-radius: 5px;
+    padding : 5px;
+    margin : 7px 10px;
+  }
+
+/* ------- Content ------ */
+
+.container{
+    height: 93vh;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    justify-content: center;
+}
+.container .section{
+    display: flex;
+    width: 85%;
+}
+.section .left{
+    flex: 40%
+}
+.section .right{
+    flex: 60%;
+    padding-left: 30px;
+}
+.section .right .ability{
+    display: flex;
+}
+.section .right .ability div{
+    flex:1;
+}
+.section .right .ability div img{
+    height: 50px;
+}
+.found_me img{
+    width: 30px;
+    margin-right: 10px;
+    margin-top: -15px;
+}
+
+
+/* Card */
+.card{
+    background-image: linear-gradient(rgb(105, 142, 179), rgb(218, 217, 217));
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(70, 39, 39, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card img{
+    width: 100%; 
+    border: 5px; 
+    border-radius: 10px;
+}
+.card p{
+    color:rgb(170, 145, 5);
+}
+.card table{
+    border-collapse: collapse;
+    width:100%;
+}
+.card .year{
+    text-align: center;
+}
+.zebra-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 3px 1px #ddd;
+    overflow: hidden;
+    border:10px solid #fff;
+    border-radius: 5px;
+}
+.zebra-table th,.zebra-table td{
+    vertical-align: top;
+    padding: 5px 7px;
+    text-align: left;
+    margin:0;
+    }
+.zebra-table tbody tr:nth-child(odd) { /* Make table like zebra */
+    background:#eee;}
+

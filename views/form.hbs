@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../public/style-form.css">
+    <title>Contact Form</title>
+    <script src="../Card/script.js"></script>
+</head>
+<body>
+
+    <!----- Navbar ----->
+    <nav>
+        <ul>
+            <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+            <li><a href="/" style="margin-left:20px;">Home</a></li>
+            <li><a href="/blog-detail">Blog</a></li>
+            {{#if isLogin}}
+            <li style="float:right;"><a class="logout" href="/logout">LogOut</a></li>
+            <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+            {{else}}
+            <li style="float:right;"><a class="logout" href="/login">Login</a></li>
+            <li style="float:right;"><a class="logout" href="/register">Register</a></li>
+            {{/if}}
+        </ul>
+    </nav>
+    {{#if messages.danger}}
+<div class="alert alert-danger" role="alert">
+  {{messages.danger}}
+</div>
+{{/if}}
+
+    <!----- Content ----->
+    <div class="container">
+        <form method="post" onsubmit="submitData()">
+            <div class="input_item">
+                <label for="name">Name</label>
+                <br>
+                <input name="name" type="text" id="name">
+            </div>
+        <br>
+            <div class="input_item">
+                <label for="">Email</label>
+                <br>
+                <input name="email1" type="email" id="email">
+            </div>
+        <br>
+            <div class="input_item">
+                <label for="">Phone Number</label>
+                <br>
+                <input name="phone1" type="number" id="phone">
+            </div>
+        <br>
+            <div class="input_item">
+                <label for="">Subject</label>
+                <br>
+                <select name="subject1" id="subject">
+                    <option value="Privacy police">Privacy police</option>
+                    <option value="Problem With Our Site">Problem With Our Site</option>
+                    <option value="Questions on Order">Questions on Order</option>
+                    <option value="Other Questions">Other Questions</option>
+                </select>
+            </div>
+        <br>
+            <div class="input_radio">
+                <label for="gender">Gender</label>
+            <div class="button">
+                <label for="Male"><input type="radio" id="Male" name="gender" value="Male">Male</label>
+                <label for="Female"><input type="radio" id="Female" name="gender" value="Female">Female</label>
+            </div>
+            </div>
+        <br>
+            <div class="input_item">
+                <label for="">Your Message</label>
+                <br>
+                <textarea name="message1" id="message" cols="30" rows="10"></textarea>
+            </div>
+        <br>
+        {{#if isLogin}}
+            <div>
+                <button type="submit"> <img src="../public/assets/submit.png" style="width:10px;"> Submit</button>
+            </div>
+            {{/if}}
+        </form>
+    </div>
+
+    <script>
+    function submitData () {
+    let name = document.getElementById("name").value
+    let email = document.getElementById("email").value
+    let phone = document.getElementById("phone").value
+    let subject = document.getElementById("subject").value
+    let message = document.getElementById("message").value
+    let gender
+    let element_gender = document.querySelector('input[type=radio][name=gender]:checked')
+        if (element_gender != null) {
+            gender = element_gender.value;
+        }
+        else{
+            gender = null;
+        }
+
+    if (name === "" || email === "" || phone === "" || message === "" || gender === null){
+        alert ("All Data Needed!")
+        return false;
+    }
+
+    let emailReceiver ="Kiki@gmail.com"
+    let link = document.createElement ('a')
+    link.href = `mailto:${emailReceiver}?subject=${subject}&body=Hello my name is ${name}, ${message}`
+    link.target = "_blank"
+    link.click ()
+    }
+    </script>
+    
+    
+</body>
+</html>

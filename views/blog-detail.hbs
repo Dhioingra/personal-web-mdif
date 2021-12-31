@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Creating Blog Page - detail</title>
+    <link rel="stylesheet" href="../public/style-blog.css" />
+    </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+  <ul>
+      <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+      <li><a href="/" style="margin-left:20px;">Home</a></li>
+      <li><a href="/blog-detail">Blog</a></li>
+      {{#if isLogin}}
+      <li style="float:right;"><a class="logout" href="/logout">LogOut</a></li>
+      <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+      {{else}}
+      <li style="float:right;"><a class="logout" href="/login">Login</a></li>
+      <li style="float:right;"><a class="logout" href="/register">Register</a></li>
+      {{/if}}
+  </ul>
+</nav>  
+{{#if messages.success}}
+<div class="alert alert-success" role="alert">
+  {{messages.success}}
+</div>
+{{/if}}
+{{#if isLogin}}
+<a href="/add-blog"><button  class="button-add" style="margin-top : 20px; margin-left : 82%;"> <img src="../public/assets/plus.png" alt=""><p>Add Blog</p> </button></a>
+{{/if}}
+    <!-- Blog -->
+        {{#each blogs}}
+        <div class="blog">
+      <div id="contents" class="blog-list">
+                   <div class="blog-list-item">
+                <div class="blog-image">
+                    <img src="{{this.image}}" alt="" />
+                </div>
+                <div class="blog-content">
+                  {{#if isLogin}}
+                    <div class="btn-group">
+                    <a href="/edit-blog/{{id}}"><button class="btn-edit">Edit Post</button></a>
+                    <a href="/delete-blog/{{id}}"><button class="btn-post">Delete Post</button></a>
+                    </div>
+                    {{/if}}
+                    <h1>
+                    <a href="/blog/{{this.id}}" target="_blank">{{this.title}}</a>
+                    </h1>
+                    <div class="detail-blog-content">
+                    {{getTime postAt}} | {{this.author}}
+                    </div>
+                    <p>{{this.content}}</p>
+                <div style="text-align:right; font-size:15px; color:grey; margin: 5px">{{getDistance postAt}}</div>
+                </div>
+                </div>
+                </div>
+                </div>
+ {{/each}}
+ </body>
+</html>

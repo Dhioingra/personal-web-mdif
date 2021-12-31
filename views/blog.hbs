@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>Creating Blog Page - detail</title>
+    <link rel="stylesheet" href="../public/style-blog.css" />
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav>
+    <ul>
+        <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+        <li><a href="/" style="margin-left:20px;">Home</a></li>
+        <li><a href="/blog-detail">Blog</a></li>
+        {{#if isLogin}}
+      <li style="float:right;"><a class="logout" href="/logout">LogOut</a></li>
+      <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+      {{else}}
+      <li style="float:right;"><a class="logout" href="/login">Login</a></li>
+      <li style="float:right;"><a class="logout" href="/register">Register</a></li>
+      {{/if}}
+    </ul>
+</nav>
+
+    <!-- Blog -->
+    <div class="blog-detail">
+      <div class="blog-detail-container">
+        <h1>{{blogs.title}}</h1>
+        <div class="author"> {{blogs.postAt}} | {{blogs.author}}</div>
+        <img src="{{blogs.image}}" alt="detail" />
+        <p>
+         {{blogs.content}}
+        </p>
+      </div>
+      
+    </div>
+  </body>
+</html>

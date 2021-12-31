@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../public/style-card.css">
+    <title>Personal WEB</title>
+</head>
+<body>
+
+
+<!------ Navbar -------->
+<nav>
+    <ul>
+        <li><a class="not_logo" href="/" style="padding: 5px"><img class="gambar" src="../public/assets/konoha.png" alt="" style="width: 50px; height: auto;"></a></li>
+        <li><a href="/" style="margin-left:20px;">Home</a></li>
+        <li><a href="/blog-detail">Blog</a></li>
+        {{#if isLogin}}
+      <li style="float:right;"><a class="logout" href="/logout">LogOut</a></li>
+      <li style="float:right; margin-right: 50px;"><a href="/contact-me">Contact Me</a></li>
+      {{else}}
+      <li style="float:right;"><a class="logout" href="/login">Login</a></li>
+      <li style="float:right;"><a class="logout" href="/register">Register</a></li>
+      {{/if}}
+    </ul>
+</nav>
+
+<!----- Content ----->
+
+<div class="container">
+
+    <div class="section">
+
+        <div class="left">
+            <div class="card">
+                <img src="../public/assets/image.jpg" alt="">
+                <h2>M. Dhio Ingra Fernanda</h2>
+                <p>
+                Lorem ipsum dolor, sit amet consectetur 
+                    adipisicing elit. Officia, laudantium?</p>
+        
+                <table class="zebra-table" border="1">
+                    <tr>
+                        <th>Experience</th>
+                        <th> Year </th>
+                    </tr>
+                    {{#each experience}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td class="year">{{this.year}}</td>
+                    </tr>
+                    {{/each}}
+                </table>
+             </div>
+        </div>
+        <div class="right">
+                <h1>What i do</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Voluptatum, animi aperiam 
+                    natus totam expedita iusto soluta maxime 
+                    molestiae, ea quo odio error fugit maiores. 
+                    Facere libero mollitia aspernatur sint 
+                    ratione?</p>
+
+                <div class="ability">
+
+                    <div>
+                        <img src="../public/assets/js.png" alt="">
+                        <h4>Frontend Developer</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Amet, voluptas.</p>
+                    </div>
+                    <div>
+                        <img src="../public/assets/git.png" href="" alt="">
+                        <h4>Version Control System</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Amet, voluptas.</p>
+                    </div>
+                    <div>
+                        <img src="../public/assets/automated.PNG" alt="">
+                        <h4>Automated Deployment</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Amet, voluptas.</p>
+                    </div>
+
+                </div>
+                
+                <div class="found_me">
+
+                    <h1>Found Me on</h1>
+                    <a href="http://localhost:5000/add-blog/2"><img src="../public/assets/facebook-logo.png" alt=""></a>
+                    <a href="http://localhost:5000/add-blog/3"><img src="../public/assets/whatsapp.png" alt=""></a>
+                    <a href="http://localhost:5000/blog-detail"><img src="../public/assets/instagram.png" alt=""></a>
+
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
